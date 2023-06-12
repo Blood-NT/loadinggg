@@ -27,6 +27,7 @@ function redirectBasedOnDevice() {
   } else if (isAndroid()) {
     redirectToPlayStore();
   } else {
+     redirectToPlayStore();
     // Thiết bị không được hỗ trợ, thực hiện các hành động khác tại đây
   }
 }
