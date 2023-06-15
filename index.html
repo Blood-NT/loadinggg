@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Page</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <script type="module" src="./main.js"></script>
-</body>
+  <div class="container">
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+    <div class="form">
+      <h2>Đăng Ký Nhận Tư Vấn</h2>
+      <form id="myForm">
+        <div class="form-group">
+          <label for="name">Họ và tên:</label>
+          <input type="text" id="name" name="name" required>
+          <span class="error-message" id="name-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="phone">Số điện thoại:</label>
+          <input type="tel" id="phone" name="phone" required>
+          <span class="error-message" id="phone-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <span class="error-message" id="email-error"></span>
+        </div>
+        <button type="submit">Gửi</button>
+      </form>
+    </div>
+  </div>
 
+  <script type="module" src="./ok.js"></script>
+</body>
 </html>
