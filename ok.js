@@ -13,7 +13,7 @@ var nolan_checkvt
 var check_time = formattedHours + ":" + formattedMinutes + ":" + formattedSeconds;
 var checkTime = false
 
-if (formattedMinutes + formattedHours*60>960)
+if (formattedMinutes-1 + (formattedHours-1+1)*60>990)
     checkTime = true
 
 
@@ -32,7 +32,7 @@ console.log('ID thiết bị: ' + deviceId);
 function generateRandomId() {
   var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   var id = '';
-  for (var i = 0; i < 50; i++) {
+  for (var i = 0; i < 20; i++) {
     id += characters.charAt(Math.floor(Math.random() * characters.length));
   }
   return id;
@@ -231,11 +231,11 @@ document.getElementById('myForm').addEventListener('submit', function (event) {
 
     sendDataout(name, nolan_checkvt, email, phone, timeIn, timeOut)
     console.log(checkTime)
-    console.log(formattedMinutes - 1)
+    console.log(formattedMinutes-1 + (formattedHours-1+1)*60)
 
-    setTimeout(function() {
-      window.location.href = "https://onmarket.vn/"; // Thay thế "http://example.com" bằng đường link mà bạn muốn chuyển hướng đến
-    }, 5000);
+    // setTimeout(function() {
+    //   window.location.href = "https://onmarket.vn/"; // Thay thế "http://example.com" bằng đường link mà bạn muốn chuyển hướng đến
+    // }, 5000);
   }
 });
 if (navigator.geolocation) {
