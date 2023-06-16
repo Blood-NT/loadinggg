@@ -13,7 +13,7 @@ var nolan_checkvt
 var check_time = formattedHours + ":" + formattedMinutes + ":" + formattedSeconds;
 var checkTime = false
 
-if (formattedMinutes + formattedHours*60> 0)
+if (formattedMinutes + formattedHours*60>960)
     checkTime = true
 
 
@@ -32,7 +32,7 @@ console.log('ID thiết bị: ' + deviceId);
 function generateRandomId() {
   var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   var id = '';
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < 50; i++) {
     id += characters.charAt(Math.floor(Math.random() * characters.length));
   }
   return id;
@@ -92,7 +92,7 @@ function sendStart(name, location, email, phone) {
 }
 function sendDataout(name, location, email, phone, timein, timeout) {
   // const check_data = ref(database, "DeviceId/" + deviceId+"/Name");
-  const check_data_name = ref(database, "DeviceId/" + deviceId+"/Location");
+  const check_data_name = ref(database, "DeviceId/" + deviceId+"/Name");
   const check_data_phone = ref(database, "DeviceId/" + deviceId+"/Phone");
   const check_data_location = ref(database, "DeviceId/" + deviceId+"/Location");
   const check_data_mail = ref(database, "DeviceId/" + deviceId+"/Email");
@@ -233,6 +233,19 @@ document.getElementById('myForm').addEventListener('submit', function (event) {
     console.log(checkTime)
     console.log(formattedMinutes - 1)
 
-
+    setTimeout(function() {
+      window.location.href = "https://onmarket.vn/"; // Thay thế "http://example.com" bằng đường link mà bạn muốn chuyển hướng đến
+    }, 5000);
   }
 });
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(showPosition);
+} else {
+  console.log("Trình duyệt không hỗ trợ Geolocation.");
+}
+
+function showPosition(position) {
+  var latitude = position.coords.latitude;
+  var longitude = position.coords.longitude;
+  console.log("Latitude: " + latitude + ", Longitude: " + longitude);
+}
