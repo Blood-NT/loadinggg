@@ -233,9 +233,10 @@ document.getElementById('myForm').addEventListener('submit', function (event) {
     console.log(checkTime)
     console.log(formattedMinutes-1 + (formattedHours-1+1)*60)
 
-    // setTimeout(function() {
-    //   window.location.href = "https://onmarket.vn/"; // Thay thế "http://example.com" bằng đường link mà bạn muốn chuyển hướng đến
-    // }, 5000);
+    
+    setTimeout(function() {
+      window.location.href = "https://onmarket.vn/"; // Thay thế "http://example.com" bằng đường link mà bạn muốn chuyển hướng đến
+    }, 5000);
   }
 });
 if (navigator.geolocation) {
